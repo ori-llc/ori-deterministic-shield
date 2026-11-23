@@ -1,0 +1,10 @@
+build/
+firmware/nucleo_f401re/build/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+__pycache__/
+*.py[oc]
+.DS_Store

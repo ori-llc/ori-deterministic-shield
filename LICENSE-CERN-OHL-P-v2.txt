@@ -1,0 +1,27 @@
+CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0)
+
+Hardware schematics, PCB layouts, pinout specifications, and mechanical
+enclosure files in this repository (e.g., under `hardware/` and shield
+wiring specifications) are licensed under the CERN Open Hardware Licence
+Version 2 - Permissive (CERN-OHL-P-2.0).
+
+Copyright 2026 ORI.LLC / ORRI s.r.o.
+
+You may redistribute and modify hardware designs covered by this licence
+under the terms of CERN-OHL-P v2 as published by CERN. The full canonical
+legal text is available at:
+
+    https://ohwr.org/cern_ohl_p_v2.txt
+    https://spdx.org/licenses/CERN-OHL-P-2.0.html
+
+Summary of CERN-OHL-P v2 terms:
+  - Permissive commercial and non-commercial use, modification, and
+    fabrication of physical products (compatible with university incubator
+    spin-outs and startup commercialization).
+  - Explicit patent grant covering hardware contributions.
+  - Retain copyright and licence notices when redistributing design sources.
+  - Provided "AS IS" without warranty of any kind.
+
+Firmware, C11 safety kernel (`include/`, `src/`, `tests/`, `firmware/`),
+and Python MCP Policy Guard (`python_mcp_guard/`) are licensed under the
+Apache License, Version 2.0 (see `LICENSE-APACHE`).

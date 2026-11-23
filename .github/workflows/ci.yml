@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  c11-host-tests:
+    name: Host C11 Safety Kernel Tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile & Run Strict C11 Unit Tests
+        run: make test
+
+  python-mcp-guard:
+    name: Track B Python MCP Policy Guard Tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Policy Guard Unit Tests
+        run: make py-test
+
+  stm32f401re-firmware:
+    name: Bare-Metal ARM Cortex-M4F (NUCLEO-F401RE) Cross-Compile
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ARM Bare-Metal Toolchain
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi binutils-arm-none-eabi
+      - name: Build build/ori_shield_f401re.bin
+        run: make firmware
+      - name: Verify Binary Artifact Exists
+        run: test -s firmware/nucleo_f401re/build/ori_shield_f401re.bin
